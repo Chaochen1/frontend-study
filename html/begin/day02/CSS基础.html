@@ -7,19 +7,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+
+    <!--标签选择器 类选择器 id选择器 通配符选择器-->
     <style>
-        h1 {
+        /* 标签选择器 */
+        
+        h3 {
             color: red;
             font-size: 100px;
+        }
+        
+        .red {
+            color: black;
+        }
+        
+        .font {
+            font: 1em sans-serif;
+            /* 加粗 */
+            font-weight: 700;
+        }
+        
+        #id {
+            font: 1em sans-serif;
+            /* 文本对齐 */
+            text-align: center;
+            /* 文本加上划线 下划线 中间线 */
+            text-decoration: line-through;
+            /* 文本缩进 */
+            text-indent: 2em;
+            /* 设置行间距 */
+            line-height: 20px;
+        }
+        /* 通配符选择器覆盖页面所有标签 一般用来设置统一字体 */
+        
+        * {
+            /* 字体 */
+            font-family: 'Courier New', Courier, monospace;
+            /* 字体是正的还是斜的 */
+            font-style: normal;
         }
     </style>
 
 </head>
 
 <body>
-    <h1>
-        hello world
-    </h1>
+    <h3>
+        标签选择器
+    </h3>
+
+    <!-- 类选择器支持多类名 多继承 -->
+    <h3 class="red font">
+        类选择器
+    </h3>
+
+    <!-- id选择器只能使用一次 -->
+    <h3 id="id">
+        id选择器
+    </h3>
 
 </body>
 
