@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 块元素转换为行元素 */
+        
+        div {
+            background-color: brown;
+            display: inline;
+        }
+        /* 行元素转换为块元素 */
+        
+        span {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            display: block;
+        }
+        /* 行元素转换为行内块元素 */
+        
+        input {
+            width: 100px;
+            height: 200px;
+            display: inline-block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 块元素 div h p 一行只能有一个 可以设置高度和宽度-->
+    <!-- 行元素 span a b strong 一行可以有多个 不能设置高度和宽度-->
+    <!-- 行内块元素 input image td 一行可以有多个 可以设置高度和宽度-->
+    <!-- 行 块转换 -->
+    <div>块元素</div>
+    <div>块元素</div>
+
+    <span>行元素</span>
+    <span>行元素</span>
+
+    <input></input>
+    <input></input>
+
+</body>
+
+</html>
