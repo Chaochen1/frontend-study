@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* <!-- 层叠性  后一个装饰覆盖前一个装饰--> */
+        
+        .cascade {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        
+        .cascade {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+        /* <!-- 继承性 子标签继承父标签属性 一般只继承字体颜色大小--> */
+        
+        .extend {
+            color: red;
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+        }
+        /* <!-- 优先级 一个标签有多个相同装饰 --> */
+        
+        .priority {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        
+        #dd {
+            width: 100px;
+            height: 300px;
+            background-color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="cascade">层叠性</div>
+
+    <div class="extend">
+        <p>继承性</p>
+    </div>
+
+    <div class="priority" id="dd">优先级</div>
+
+</body>
+
+</html>
