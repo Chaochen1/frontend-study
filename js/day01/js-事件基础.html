@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #time {
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            background-color: pink;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 事件三要素：事件源 事件触发 事件处理 -->
+
+    <button id="but">点击</button>
+
+    <button id="butTime">点击获取时间</button>
+
+    <div id="time"></div>
+
+    <script>
+        // 事件源
+        var but = document.getElementById('but')
+            // 事件触发
+        but.onclick = function() {
+            // 事件处理程序
+            alert('你好')
+        }
+
+        var butTime = document.getElementById('butTime')
+        var time = document.getElementById('time')
+        butTime.onclick = function() {
+            console.log('time')
+                // innerText只能显示文字 innerHtml可以显示标签
+                // 两者皆可以读取元素，innerHtml可以换行，innerText不能换行
+                // time.innerText = getTime()
+            time.innerHTML = getTime()
+        }
+        var getTime = function() {
+            var date = new Date()
+            var year = date.getFullYear()
+            var month = date.getMonth() + 1
+            var day = date.getDate()
+            var hour = date.getHours()
+            var min = date.getMinutes()
+            var sec = date.getSeconds()
+            return year + '-' + month + '-' + day + ' ' + hour + ':' + min + ':' + sec
+        }
+    </script>
+
+
+</body>
+
+</html>

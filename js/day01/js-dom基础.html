@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="time"></div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <ol id="oo">
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ol>
+
+    <div class="cc"></div>
+    <div class="nav">1</div>
+    <div class="nav">2</div>
+
+    <script>
+        // 根据id获取元素
+        var time = document.getElementById('time')
+        console.log(time)
+        console.dir(time)
+
+        // 打印所有li
+        var li = document.getElementsByTagName('li')
+        for (let index = 0; index < li.length; index++) {
+            const element = li[index];
+            console.log(element);
+        }
+
+        // 打印ol中的所有li
+        var oo = document.getElementById('oo')
+        var dd = oo.getElementsByTagName('li')
+        for (let index = 0; index < dd.length; index++) {
+            const element = dd[index];
+            console.log(element);
+        }
+
+        // 根据类名获取元素
+        var csName = document.getElementsByClassName('cc')
+        console.log(csName);
+
+        // 根据指定选择器返回第一个元素对象,需要加符号
+        var navName = document.querySelector('.nav')
+        console.log(navName);
+
+        // 根据指定选择器返回所有元素对象
+        var navName = document.querySelectorAll('.nav')
+        console.log(navName);
+
+        // 返回body对象
+        var bod = document.body
+        console.log(bod);
+
+        // 返回html对象
+        var bod = document.documentElement
+        console.log(bod);
+    </script>
+</body>
+
+</html>

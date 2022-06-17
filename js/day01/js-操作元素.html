@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .lin {
+            width: 200px;
+            height: 30px;
+            background-color: pink;
+            text-indent: 2em;
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <button id="baidu">百度</button>
+    <button id="google">谷歌</button>
+    <br>
+    <img src="/day01/images/b.png">
+
+    <script>
+        var ba = document.getElementById('baidu')
+        var go = document.getElementById('google')
+        var li = document.querySelector('img')
+        ba.onclick = function() {
+            li.src = "/day01/images/b.png"
+        }
+        go.onclick = function() {
+            li.src = "/day01/images/g.png"
+        }
+    </script>
+
+
+
+</body>
+
+</html>
