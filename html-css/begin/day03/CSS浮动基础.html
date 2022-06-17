@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 浮动 脱标 前一个元素设置浮动之后 若后面的元素没有设置浮动会覆盖前一个元素之前的位置 -->
+    <!-- 浮动的元素具有行内块元素的特征 即可以设置高度和宽度 -->
+
+    <!-- 网页布局第一准则 先用标准流设置父元素 内部子元素全部用浮动 -->
+    <!-- 网页布局第二准则 先设置盒子的大小再设置盒子的位置 -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        /* 父元素 */
+        
+        .father {
+            width: 800px;
+            height: 400px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+        /* 子元素 */
+        
+        .son1 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            margin-right: 10px;
+        }
+        /* 子元素 */
+        
+        .son2 {
+            float: right;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        /* 子元素 */
+        
+        .son3 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son1"></div>
+        <div class="son2"></div>
+        <div class="son3"></div>
+    </div>
+</body>
+
+</html>
