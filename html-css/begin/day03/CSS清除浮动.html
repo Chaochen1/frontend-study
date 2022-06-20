@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        /* 3 after 伪元素法 */
+        /* .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        
+        .clearfix {
+            /* IE6、7 专有 */
+        /* *zoom: 1; */
+        /* } */
+        /* 4 双伪元素法 */
+        
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+        
+        .clearfix:after {
+            clear: both;
+        }
+        /* 兼容 ie 6 7 */
+        
+        .clearfix {
+            *zoom: 1;
+        }
+        
+        .father {
+            width: 600px;
+            /* height: 110px; */
+            background-color: gray;
+            margin: 0 auto;
+            /* 2 父级添加overflow */
+            /* overflow: hidden; */
+        }
+        
+        .son1 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        
+        .son2 {
+            float: left;
+            width: 100px;
+            height: 200px;
+            background-color: black;
+        }
+        
+        .son3 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father clearfix">
+        <div class="son1"></div>
+        <div class="son2"></div>
+        <div class="son3"></div>
+        <!-- 1 额外标签法 -->
+        <!-- <div style=" clear:both"></div> -->
+    </div>
+</body>
+
+</html>

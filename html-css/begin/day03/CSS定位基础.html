@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 定位 = 定位模式 + 边偏移 */
+        /* 定位模式position static relative absolute fixed */
+        /* static 默认方式  无定位 */
+        /* 1 relative 相对定位 相对于盒子原来的位置的定位 移动位置参照原来位置 原来位置继续保留*/
+        /* 边偏移 top bottom left right */
+        /* 2 绝对定位 不保留原来位置  无祖先元素以document为参考 有祖先元素以最近有定位的祖先为参考*/
+        /* 3 固定定位 固定在浏览器 滚动页面元素不会改变 不会保留原来位置  */
+        /* 1 子绝父相 */
+        
+        .father {
+            position: relative;
+            margin: 0 auto;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+        
+        .son1 {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+        
+        .son2 {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        
+        .son3 {
+            position: fixed;
+            bottom: 10px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+        }
+        /* 在版面的右侧上下移动 */
+        
+        .son4 {
+            position: fixed;
+            left: 50%;
+            margin-left: 250px;
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+    <div class="father">
+        相对定位
+        <div class="son1">绝对定位</div>
+        <div class="son2">绝对定位</div>
+        <div class="son3">固定定位</div>
+        <div class="son4">固定定位</div>
+    </div>
+
+    <p>ddddddddd</p>
+    <p>dddd</p>
+    <p>ddd</p>
+    <p>ddd</p>
+    <p>dd</p>
+    <p>dd</p>
+    <p>dd</p>
+    <p>dd</p>
+    <p>dd</p>
+    <p>dd</p>
+
+
+
+</body>
+
+</html>
