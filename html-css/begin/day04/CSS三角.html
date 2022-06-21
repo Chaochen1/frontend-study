@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 产生单独三角形 */
+        
+        .d1 {
+            width: 0;
+            height: 0;
+            line-height: 0;
+            font-size: 0;
+            border: 50px solid transparent;
+            border-left-color: pink;
+        }
+        /* 产生正方形和小三角拼起来的图形 */
+        
+        .box {
+            position: relative;
+            width: 100px;
+            height: 300px;
+            background-color: red;
+            margin: 0 auto;
+        }
+        
+        .d2 {
+            position: absolute;
+            top: -20px;
+            left: 60px;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-bottom-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1"></div>
+    <div class="box">
+        <div class="d2"></div>
+    </div>
+</body>
+
+</html>
