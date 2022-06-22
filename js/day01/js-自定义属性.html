@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- tab栏切换使用自定义属性 -->
+
+<body>
+    <div id="dd" das="cc"></div>
+    <div id="dd1" data-index="0" data-user-name="1"></div>
+
+    <script>
+        // 保留字属性可以通过getAttribute和元素.属性获取
+        var dd = document.getElementById('dd')
+        var re = dd.getAttribute('id')
+        var ree = dd.id
+        console.log(re)
+        console.log(ree)
+            // 自定义属性只能通过getAttribute
+        var red = dd.getAttribute('das')
+        console.log(red)
+            // 增加属性
+        dd.setAttribute('sda', 'ddf')
+        var res = dd.getAttribute('sda')
+        console.log(res)
+
+        // 移除属性
+        dd.removeAttribute('sda')
+        console.log(dd.getAttribute('sda'))
+
+        var dd1 = document.getElementById('dd1')
+            // H5规定自定义属性名称以data开头
+        console.log(dd1.dataset.index)
+        console.log(dd1.dataset['index'])
+            // 驼峰命名
+        console.log(dd1.dataset.userName)
+        console.log(dd1.dataset['userName'])
+    </script>
+</body>
+
+</html>

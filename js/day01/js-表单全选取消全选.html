@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .wrap {
+            width: 300px;
+            margin: 100px auto 0;
+        }
+        /* 表格外围加边框 */
+        
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 300px;
+        }
+        /* 内部表格加边框 */
+        
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+        /* 表头格式 */
+        
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+        /* 数据行格式 */
+        
+        td {
+            font: 14px "微软雅黑";
+        }
+    </style>
+</head>
+
+<body class="wrap">
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="ch_tou"></th>
+                    <th>商品</th>
+                    <th>价钱</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>手机</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>电视</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>电脑</td>
+                    <td>3000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        var th = document.getElementById('ch_tou')
+        var tds = document.getElementById('j_tb').getElementsByTagName('input')
+            // 表头选中 全部选中 表头不选 全部不选
+        th.onclick = function() {
+            for (let index = 0; index < tds.length; index++) {
+                tds[index].checked = this.checked;
+            }
+        }
+
+        // 表行全部选中 表头选中 表行有一不选中 则表头不选中
+        for (let index = 0; index < tds.length; index++) {
+            tds[index].onclick = function() {
+                var flag = true;
+                // 表头选中前检查是否每个表行都是选中的状态
+                for (let index = 0; index < tds.length; index++) {
+                    if (!tds[index].checked) {
+                        flag = false;
+                        break;
+                    }
+                }
+                th.checked = flag
+            }
+
+        }
+    </script>
+</body>
+
+</html>

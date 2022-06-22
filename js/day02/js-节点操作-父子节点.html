@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 节点包括 元素节点1 属性节点2 文本节点3 -->
+<!-- 每个节点至少拥有节点类型 节点名称 节点值三个属性 -->
+
+<body>
+    <ul>
+        <li id="l1"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script>
+        // 由子节点获取父节点，父节点为最近的父亲
+        var child1 = document.getElementById('l1');
+        console.log(child1.parentNode)
+
+        // 标准获取子节点方法 会包括文本节点和元素节点
+        var father = document.querySelector('ul');
+        console.log(father.childNodes)
+
+        // 非标准获取子节点方法 只包含元素节点
+        console.log(father.children)
+
+        // 获取指定子节点
+        console.log(father.children[0])
+        console.log(father.firstChild)
+        console.log(father.firstElementChild)
+
+        console.log(father.children[father.children.length - 1])
+        console.log(father.lastChild)
+        console.log(father.lastElementChild)
+    </script>
+</body>
+
+</html>

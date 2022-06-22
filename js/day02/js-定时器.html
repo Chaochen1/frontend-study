@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- 用来定时执行某个任务 比如广告自动关闭-->
+
+<body>
+    <button id="off">关闭定时器</button>
+    <script>
+        // 开启定时器
+        var inte = setInterval(() => {
+            console.log('定时器')
+        }, 1000)
+
+        var sett = setTimeout(() => {
+            console.log('延迟执行')
+        }, 1000);
+
+        // 关闭定时器 两种方法
+        // clearInterval(inte)
+        // clearInterval(sett)
+        // clearTimeout(inte)
+        // clearTimeout(sett)
+        off.onclick = function() {
+            clearInterval(inte)
+        }
+    </script>
+</body>
+
+</html>

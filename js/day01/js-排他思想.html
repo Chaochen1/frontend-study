@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- 多个按钮 每次点击只有一个按钮变色 其它按钮不变色 -->
+
+<body>
+    <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button>
+
+    <script>
+        var buttons = document.querySelectorAll('button')
+        for (let index = 0; index < buttons.length; index++) {
+            buttons[index].onclick = function() {
+                // 先让所有颜色消失
+                for (let index = 0; index < buttons.length; index++) {
+                    buttons[index].style.backgroundColor = ''
+                }
+                // 然后再修改颜色
+                this.style.backgroundColor = 'pink'
+            }
+        }
+    </script>
+
+</body>
+
+</html>

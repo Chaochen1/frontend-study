@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 1000px;
+            height: 2000px;
+        }
+        
+        #sco {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="on">开启</button>
+    <button id="off">关闭</button>
+    <button id="sco">平滑滚动</button>
+    <img src="../day01/images/g.png" alt="">
+    <script>
+        // 1 获取浏览器窗口尺寸
+        var w = window.innerWidth
+        var h = window.innerHeight
+        console.log(w)
+        console.log(h)
+
+        // 2 浏览器弹出层
+        // 2.1 提示框
+        window.alert('你好')
+            // 2.2 询问框 返回boolean
+        var res = window.confirm('需要退出吗')
+        console.log(res)
+            // 2.3 输入框
+        var inp = window.prompt('请输入')
+        console.log(inp)
+
+        // 3 开启和关闭标签页
+        on.onclick = function() {
+            // 可以用来新打开一个标签页
+            window.open('http://www.baidu.com')
+        }
+        off.onclick = function() {
+            // 关闭的是当前标签页
+            window.close()
+        }
+
+        // 4 浏览器常见事件
+        // 4.1 资源加载完毕
+        window.onload = function() {
+                console.log('加载完毕')
+            }
+            // 4.2 可视尺寸改变 放大缩小
+        window.onresize = function() {
+                console.log('尺寸改变')
+            }
+            // 4.3 滚动条位置改变
+        window.onscroll = function() {
+            console.log('滚动条位置改变')
+        }
+
+        // 5 浏览器历史记录操作
+        // 相当于页面的回退和前进
+        window.history.back()
+        window.history.forward()
+
+        // 6 浏览器卷去的尺寸
+        // 卷去的高度：若document顶端没有doctype则使用document.body.scrollTop，反之使用document.documentElement.scrollTop
+        // 卷去的款段：若document顶端没有doctype则使用document.body.scrollLeft，反之使用document.documentElement.scrollLeft
+        window.onscroll = function() {
+            var height = document.documentElement.scrollTop || document.body.scrollTop
+            var width = document.documentElement.scrollLeft || document.body.scrollLeft
+            console.log(height)
+            console.log(width)
+        }
+
+        // 7 浏览器滚动到 用来从底部回到顶部
+        sco.onclick = function() {
+            window.scrollTo({
+                left: 300,
+                top: 400,
+                behavior: 'smooth'
+            })
+        }
+    </script>
+</body>
+
+</html>

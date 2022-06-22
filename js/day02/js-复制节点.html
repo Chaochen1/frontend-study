@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        var ul = document.querySelector('ul');
+
+        // cloneNode方法中若没有参数或者为false则默认浅拷贝 只拷贝元素 不拷贝属性和值,反之全部拷贝
+        // var li = ul.firstElementChild.cloneNode();
+        var li = ul.firstElementChild.cloneNode(true);
+
+        ul.appendChild(li)
+    </script>
+</body>
+
+</html>
