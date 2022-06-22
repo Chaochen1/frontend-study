@@ -21,6 +21,18 @@
             height: 100px;
             background-color: red;
         }
+        
+        .divvr {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+        }
+        
+        .divvch {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
     </style>
 
 </head>
@@ -35,9 +47,10 @@
     <button id="inbut">按钮</button>
     <input type="text" value="请输入密码">
     <div class="divv"></div>
+    <div class="divvr"></div>
 
     <script>
-        // 修改元素属性
+        // 1 修改元素属性
         var ba = document.getElementById('baidu')
         var go = document.getElementById('google')
         var li = document.querySelector('img')
@@ -47,16 +60,22 @@
         go.onclick = function() {
                 li.src = "/day01/images/g.png"
             }
-            // 修改表单属性
+            // 2 修改表单属性
         var bt = document.getElementById('inbut')
         var ini = document.querySelector('input')
         bt.onclick = function() {
                 ini.value = '请再次输入'
             }
-            // 修改样式属性
+            // 3 style修改样式属性
         var divv = document.querySelector('.divv')
         divv.onclick = function() {
             this.style.backgroundColor = 'black'
+        }
+
+        //  3 className修改样式属性
+        var divvr = document.querySelector('.divvr')
+        divvr.onclick = function() {
+            this.className = 'divvch';
         }
     </script>
 

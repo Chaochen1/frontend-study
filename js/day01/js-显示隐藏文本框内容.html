@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input {
+            color: #999;
+        }
+    </style>
+
+</head>
+
+<body>
+    <input type="text" value="默认">
+
+    <script>
+        var ins = document.querySelector('input');
+        // 获得焦点删除原来文字，颜色加深
+        ins.onfocus = function() {
+            if (this.value === '默认') {
+                this.value = '';
+            }
+            this.style.color = '#333';
+        }
+
+        // 失去焦点恢复原来文字，颜色变浅
+        ins.onblur = function() {
+            if (this.value === '') {
+                this.value = '默认'
+            }
+            this.style.color = '#999';
+        }
+    </script>
+
+</body>
+
+</html>
