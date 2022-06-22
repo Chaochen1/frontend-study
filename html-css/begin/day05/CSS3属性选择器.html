@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 匹配某个具体属性 */
+        
+        li[class="l1"] {
+            color: red;
+        }
+        /* 匹配class属性值为l2开头的属性 */
+        
+        li[class^="l2"] {
+            color: pink;
+        }
+        /* 匹配class属性值为2结尾的属性 */
+        
+        li[class$="2"] {
+            color: black;
+        }
+        /* 匹配class属性值包含dd的属性 */
+        
+        li[class*="dd"] {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="l1">l1</li>
+        <li class="l22">l22</li>
+        <li class="l23">l23</li>
+        <li class="l2dd3">l23</li>
+    </ul>
+</body>
+
+</html>
