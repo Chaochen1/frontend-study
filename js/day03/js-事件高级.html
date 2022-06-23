@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<!-- 注册事件有两种方式：传统方式和方法监听注册方式 -->
+<!-- 传统方式 onclick -->
+<!-- 方法监听注册方式 addEventListener() ie9之前 attachEvent() -->
+
+<body>
+    <button>点击</button>
+    <script>
+        // 注册事件
+        var but = document.querySelector('button')
+        var fn = function() {
+                alert('按钮被点击')
+            }
+            // addEventListener('click', function() {
+            //     alert('按钮被点击')
+            // })
+        addEventListener('click', fn)
+            // 删除事件
+        but.removeEventListener('click', fn)
+    </script>
+</body>
+
+</html>

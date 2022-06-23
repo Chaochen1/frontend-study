@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="b1">按钮1</button>
+    <button id="b2">按钮2</button>
+    <p>纳斯单号i实打实的哈怂的撒</p>
+    <script>
+        bt1 = document.getElementById('b1')
+        bt1.addEventListener('mouseover', function() {
+            alert("鼠标经过触发")
+        })
+        bt2 = document.getElementById('b2')
+        bt2.addEventListener('mouseup', function() {
+                alert("鼠标按下触发")
+            })
+            // 取消右键上下文菜单
+        var pp = document.querySelector('p')
+        pp.addEventListener('contextmenu', function(e) {
+                e.preventDefault()
+            })
+            // 取消选中
+        pp.addEventListener('selectstart', function(e) {
+            e.preventDefault()
+        })
+
+        // 获取鼠标坐标
+        addEventListener('mousemove', function(e) {
+            // 窗口坐标
+            console.log(e.clientX);
+            console.log(e.clientY);
+            // 文档页面坐标
+            console.log(e.pageX);
+            console.log(e.pageY);
+            // 显示器坐标
+            console.log(e.screenX);
+            console.log(e.screenY);
+        })
+    </script>
+</body>
+
+</html>

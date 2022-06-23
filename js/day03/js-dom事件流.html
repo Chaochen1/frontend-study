@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- dom事件流分为三个阶段：捕获阶段 当前目标阶段 冒泡阶段 -->
+<!-- 捕获阶段  document>html>body>div -->
+<!-- 当前目标阶段 当前注册事件 -->
+<!-- 冒泡阶段 div>body>html>document -->
+
+<!-- 1. JS 代码中只能执行捕获或者冒泡其中的一个阶段。
+2. onclick 和 attachEvent 只能得到冒泡阶段。
+3. addEventListener(type, listener[, useCapture])第三个参数如果是 true，表示在事件捕
+获阶段调用事件处理程序；如果是 false（不写默认就是false），表示在事件冒泡阶段调用事件处理
+程序。
+4. 实际开发中我们很少使用事件捕获，我们更关注事件冒泡。
+5. 有些事件是没有冒泡的，比如 onblur、onfocus、onmouseenter、onmouseleave
+6. 事件冒泡有时候会带来麻烦，有时候又会帮助很巧妙的做某些事件，我们后面讲解 -->
+
+<body>
+    <button>点击</button>
+    <script>
+        var bt = document.querySelector('button')
+            // 第三个参数为true捕获阶段 第三个参数为false冒泡阶段
+        addEventListener(bt, function() {
+            alert('被点击了')
+        }, false);
+    </script>
+</body>
+
+</html>
