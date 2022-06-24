@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1 字面量创建对象
+        var obj1 = {
+            name: 'cc',
+            age: 18,
+            sayHi: function() {
+                console.log('obj1 hello world')
+            }
+        }
+        obj1.sayHi()
+        console.log(obj1.name);
+        console.log(obj1.age);
+
+        // 2 内置构造函数创建对象
+        var obj2 = new Object()
+        obj2.name = 'dd'
+        obj2.age = 19
+        obj2.sayHi = function() {
+            console.log('obj2 hello world');
+        }
+        console.log(obj2.name);
+        console.log(obj2.age);
+        obj2.sayHi()
+
+        // 3 对象工厂创建
+        function createObj(name, age) {
+            var obj = {}
+            obj.name = name
+            obj.age = age
+            obj.sayHi = function() {
+                console.log('obj3 hello world')
+            }
+            return obj
+        }
+        var obj3 = createObj('ff', 20)
+        console.log(obj3.name);
+        console.log(obj3.age);
+        obj3.sayHi()
+
+        // 4 构造函数创建对象
+        // 名称首字母大写 配合new关键字使用
+        // 公用方法写在构造函数原型对象中
+        // 构造函数内部不要写return
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+        }
+        Person.prototype.sayHi = function() {
+            console.log('pp hello world');
+        }
+        var p1 = new Person('gg', 21)
+        console.log(p1.name);
+        console.log(p1.age);
+        p1.sayHi()
+
+        var p2 = new Person('bb', 22)
+        console.log(p2.name);
+        console.log(p2.age);
+        p1.sayHi()
+
+        // 对象不同
+        console.log(p1 == p2)
+        console.log(p1 === p2)
+            // 方法相同
+        console.log(p1.sayHi === p2.sayHi)
+        console.log(p1.sayHi == p2.sayHi)
+    </script>
+
+
+
+
+</body>
+
+</html>

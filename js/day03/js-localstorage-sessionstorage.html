@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- sessionStorage生命周期为关闭浏览器窗口、localStorage生命周期永久生效 -->
+<!-- 容量较大，sessionStorage约5M、localStorage约20M -->
+<!-- localStorage可以用来记住用户名 -->
+
+<body>
+    用户名:<input type="text">
+    <button id="set">set</button>
+    <button id="get">get</button>
+    <button id="remove">remove</button>
+    <button id="removeAll">removeall</button>
+    <script>
+        var inp = document.querySelector('input')
+        var bt1 = document.getElementById('set')
+        var bt2 = document.getElementById('get')
+        var bt3 = document.getElementById('remove')
+        var bt4 = document.getElementById('removeAll')
+
+        // 增加
+        bt1.addEventListener('click', function() {
+                var vv = inp.value
+                sessionStorage.setItem('uname', vv)
+                localStorage.setItem('uname', vv)
+            })
+            // 查询
+        bt2.addEventListener('click', function() {
+                console.log(sessionStorage.getItem('uname'));
+                console.log(localStorage.getItem('uname'));
+            })
+            // 删除单个
+        bt3.addEventListener('click', function() {
+                console.log(sessionStorage.removeItem('uname'));
+                console.log(localStorage.removeItem('uname'));
+            })
+            // 删除全部 
+        bt4.addEventListener('click', function() {
+            console.log(sessionStorage.clear());
+            console.log(localStorage.clear());
+        })
+    </script>
+</body>
+
+</html>

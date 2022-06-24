@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 用()=>替换function
+        var p1 = function() {
+            console.log('hello world')
+        }
+        p1()
+
+        var p2 = () => {
+            console.log('hello world')
+        }
+        p2()
+
+        // 当形参有且只有一个参数时，可以不加小括号
+        var p3 = name => {
+            console.log(name)
+        }
+        p3('dd')
+
+        // 当{}中只有一句时，可以不加中括号
+        var p4 = (x, y) => x + y;
+        console.log(p4(2, 3))
+
+        // 箭头函数内没有 arguments
+        var p5 = () => {
+                console.log(arguments)
+            }
+            // Uncaught ReferenceError: arguments is not defined
+            // console.log(p5(2, 3, 4));
+
+        // 箭头函数内没有 this
+        // 箭头函数内的 this 就是外部作用域的 this
+        var p6 = () => {
+            // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+            console.log(this);
+        }
+        p6()
+
+        // obj.fn() // this 因为 fn 函数被 obj 调用, 所以 this 是 obj
+        // obj.fn2() // 因为是箭头函数, 内部没有 this, 就是外部作用域的 thi
+        var obj = {
+            fn: function() {
+                console.log(this)
+            },
+            fn2: () => {
+                console.log(this)
+            }
+        }
+
+        obj.fn()
+        obj.fn2()
+    </script>
+</body>
+
+</html>

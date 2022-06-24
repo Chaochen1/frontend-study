@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+
+            // 原型对象方法
+            // prototype
+            sayHi() {
+                console.log('hello world');
+            }
+
+            // 静态变量
+            static a = 100
+
+            // 静态方法
+            static go() {
+                console.log('go');
+            }
+        }
+
+        // 实例属性需要通过实例对象调用
+        var p = new Person('dd', 20)
+        p.sayHi()
+
+        // 静态属性直接通过类名调用
+        console.log(Person.a)
+        console.log(Person.go())
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 定义变量let
+        // 定义常量const
+
+        // 1 和var不同
+        // 1.1 不能重复声明
+        let le1 = 100;
+        // let le1 = 100;
+
+        const co1 = 100;
+        // const co1 = 100;
+
+        // 1.2 不能预定义
+        // Cannot access 'le2' before initialization
+        // console.log(le2)
+        let le2 = 100;
+        console.log(le2)
+
+        // console.log(le3)
+        const co2 = 100;
+        console.log(co2)
+
+        // 1.3 代码块中定义的变量和常量不能在代码块外部使用
+        // js-ES6-定义变量.html:39 Uncaught ReferenceError: le3 is not defined
+        if (true) {
+            let le3 = 200
+            console.log(le3);
+        }
+        // console.log(le3);
+
+        if (true) {
+            const co3 = 200
+            console.log(co3);
+        }
+        // console.log(co3);
+
+        // 1.4 定义时就要赋值
+        // let可以定义不赋值
+        let le4;
+        console.log(le4)
+        le4 = 300
+        console.log(le4)
+            // const定义就要复制
+            // const co4;
+
+        // const和let区别
+        // const定义的变量不能再改
+        // Uncaught TypeError: Assignment to constant variable.
+        const co5 = 100;
+        co5 = 200;
+        console.log(co5);
+    </script>
+</body>
+
+</html>
