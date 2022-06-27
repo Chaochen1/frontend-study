@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #fa {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        
+        #so {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="fa">
+        <div id="so"></div>
+    </div>
+    <script src="./jquery/jquery.js"></script>
+    <script>
+        // offset()  获取元素相对于页面左上角的坐标位置
+        console.log($('#so').offset())
+            // position() 获取的就是元素的定位位置
+        console.log($('#so').position())
+    </script>
+</body>
+
+</html>

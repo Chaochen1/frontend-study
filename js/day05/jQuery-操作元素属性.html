@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="aa" class="cc" data-f="sdaa"></div>
+    <script src="./jquery/jquery.js"></script>
+    <script>
+        // 两种方式 attr和prop
+        // attr 获取属性
+        console.log($('div').attr('id'));
+        // attr 修改属性
+        $('div').attr('id', 'dsad')
+        console.log($('div').attr('id'));
+        // attr 移除属性
+        $('div').removeAttr('id')
+        console.log($('div').attr('id'));
+
+        // prop 获取属性 
+        // prop 方法不能获取元素标签身上的自定义属性, 只能获取到 prop 方法自己设置的自定义属性
+        console.log($('div').prop('data-f'))
+
+        // prop设置属性
+        // 当 prop 设置元素的原生属性, 会直接响应在元素标签身上
+        // 当 prop 设置元素自定义属性, 不会直接响应在元素标签身上, 会响应在元素对象身上
+        $('div').prop('class', 'gg')
+        console.log($('div').prop('class'))
+        $('div').prop('data-f', 'nn')
+        console.log($('div').prop('data-f'))
+    </script>
+</body>
+
+</html>

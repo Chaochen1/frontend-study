@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="dd">
+
+    </div>
+
+    <div id="cc">
+
+    </div>
+
+    <input type="text">
+
+    <script src="./jquery/jquery.js"></script>
+    <script>
+        // html可以识别并解析 html 结构字符串
+        $('#dd').html('<h2>我是后来设置的内容</h2>')
+        console.log($('#dd').html())
+            // text只能识别为文本
+        $('#cc').text('<h2>我是后来设置的内容</h2>')
+        console.log($('#cc').text())
+            // value表单值
+        $('input').val('dasdasd')
+        console.log($('input').val());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <div>
+        <p>你好</p>
+    </div>
+    <span>大赛的哈桑</span>
+    <script src="./jquery/jquery.js"></script>
+    <script>
+        // on()方法绑定事件
+        // 1 绑定单个事件
+        $('button').on('click', function() {
+                console.log('sdaasdas')
+            })
+            // 2 绑定委托事件
+        $('div').on('click', 'p', function() {
+                console.log('点击p后div事件触发')
+            })
+            // 3 批量触发事件
+        $('div').on({
+            click: function() {
+                console.log('鼠标点击');
+            },
+            mouseover: function() {
+                console.log('鼠标移动');
+            }
+        })
+
+        // one()
+        // 用来绑定事件, 和 on 方法绑定事件的方式是一样的
+        // 区别: one 方法绑定的事件, 只能执行一次
+        $('span').one('click', function() {
+            console.log('点击span事件触发')
+        })
+
+        // hover()
+        // 注意: jQuery 里面一个特殊的事件
+        // 语法: 元素集合.hover(移入时触发的函数, 移出时触发的函数)
+        $('span').hover(function() {
+            console.log('鼠标移入');
+        }, function() {
+            console.log('鼠标移出');
+        })
+
+        // 事件接触绑定和触发
+        // off()解绑
+        $('span').off('click')
+            // trigger()触发
+            // 每隔1秒钟触发div的点击事件
+        setInterval(function() {
+            $('div').trigger('click')
+        }, 1000)
+    </script>
+</body>
+
+</html>

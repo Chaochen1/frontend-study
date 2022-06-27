@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+
+    <script src="./jquery/jquery.js"></script>
+    <script>
+        // 获取css属性
+        console.log($('div').css('width'))
+        console.log($('div').css('height'))
+        console.log($('div').css('background-color'))
+            // 设置css属性，如果单位为px可以不写
+        $('div').css('width', 200)
+        $('div').css('height', 100)
+        $('div').css('background-color', 'red')
+
+        // 批量设置
+        $('div').css({
+            width: 300,
+            height: 200,
+            'background-color': 'black'
+
+        })
+    </script>
+</body>
+
+</html>

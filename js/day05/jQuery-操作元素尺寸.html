@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        div {
+            width: 100px;
+            height: 100px;
+            border: 20px solid #333;
+            padding: 20px;
+            margin: 20px;
+            background-color: skyblue;
+            /* background-clip: border-box;
+            box-sizing: border-box; */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+
+    <script src="./jquery/jquery.js"></script>
+    <script>
+        // 获取元素尺寸
+        // 1 元素内容区域尺寸
+        console.log($('div').width());
+        console.log($('div').height());
+        // 2 content+border
+        console.log($('div').innerWidth());
+        console.log($('div').innerHeight());
+        // 3 content+border+padding
+        console.log($('div').outerWidth());
+        console.log($('div').outerHeight());
+        // 4 content+border+padding+margin
+        console.log($('div').outerWidth(true));
+        console.log($('div').outerHeight(true));
+    </script>
+</body>
+
+</html>
