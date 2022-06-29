@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../day01/vue/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- v-show隐藏div中的值 网页元素中还可以看到 -->
+        <!-- <div v-show="false">n的值是：{{n}}</div> -->
+        <!-- v-if直接删掉div中的值 网页元素中看不到 -->
+        <div v-if="true">n的值是：{{n}}</div>
+        <button @click="n++">点我n+1</button>
+        <button @click="n=0">置位</button>
+        <!-- if else条件判断是否显示 -->
+        <div v-if="n===0">n为0</div>
+        <div v-else-if="n===1">n为1</div>
+        <div v-else>n为其它</div>
+
+        <!-- 注： 若div中有其它元素，其它元素又有对应样式 使用v-if会把div元素删掉 对应样式也会被删掉-->
+        <!-- 这种情况可以使用template -->
+        <template v-if="true">
+            <div>
+                div实际还是存在
+         </div>
+        </template>
+    </div>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                n: '0'
+            }
+        })
+    </script>
+</body>
+
+</html>

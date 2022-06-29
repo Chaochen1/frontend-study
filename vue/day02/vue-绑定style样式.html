@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../day01/vue/vue.js"></script>
+
+    <style>
+        .basic {
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- 绑定style样式 对象写法 -->
+        <!-- <div class="basic" :style="styleObj">你好</div> -->
+        <!-- 绑定style样式 数组写法 -->
+        <div class="basic" :style="styleArr">你好</div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                styleObj: {
+                    fontSize: '40px',
+                    color: 'red'
+                },
+                styleArr: [{
+                    fontSize: '20px',
+                    color: 'black'
+                }, {
+                    backgroundColor: 'gray'
+                }]
+            }
+
+        })
+    </script>
+</body>
+
+</html>

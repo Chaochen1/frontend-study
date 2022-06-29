@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../day01/vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <ul>
+            <!-- 遍历数组 -->
+            <!-- 默认每个元素都有一个index index值从0开始-->
+            <li v-for="(p,index) of persons" :key="index">
+                {{p.name}}-{{p.age}}-{{index}}
+            </li>
+            <!-- 遍历对象 -->
+            <li v-for="(value,key) of student" :key="index">
+                {{key}}-{{value}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                persons: [{
+                    id: 001,
+                    name: 'cc',
+                    age: 18
+                }, {
+                    id: 002,
+                    name: 'dd',
+                    age: 19
+                }, {
+                    id: 003,
+                    name: 'ee',
+                    age: 23
+                }, {
+                    id: 004,
+                    name: 'ff',
+                    age: 24
+                }, ],
+                student: {
+                    name: 'sad',
+                    age: 34
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
