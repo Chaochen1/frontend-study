@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        // el的两种写法
+        new Vue({
+            el: '#root',
+            data: {
+                name: 'dsds'
+            }
+        })
+
+        var vm = new Vue({
+                data: {
+                    name: 'ds'
+                }
+            })
+            // 挂载el
+        vm.$mount('#root')
+        console.log(vm);
+        // data的两种写法
+        var vm2 = new Vue({
+            data() {
+                return {
+                    name: '尚硅谷'
+                }
+            }
+        })
+        vm2.$mount('#root')
+        console.log(vm2)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <!-- Vue中的事件修饰符:
+        1.prevent: 阻止默认事件（常用);
+        2.stop:阻止事件冒泡（常用）;
+        3.once:事件只触发一次（常用）:
+        4.capture:使用事件的捕获模式;
+        5.self:只有event.target是当前操作的元素时才触发事件:
+        6.passive:事件的默认行为立即执行，无需等待事件回调执行完毕; 
+    -->
+    <!-- 阻止默认事件触发 -->
+    <div id="root">
+        <a href="http://www.baidu.com" @click.prevent="showInfo">百度</a>
+    </div>
+
+    <!-- 阻止事件冒泡 -->
+    <div id="r1" @click="showInfo1">
+        <span @click.stop="showInfo1">点我</span>
+        <!-- 修饰符可以连续写 -->
+        <!-- <span @click.prevent.stop="showInfo1">点我</span> -->
+    </div>
+
+    <!-- 事件只触发一次 -->
+    <div id="r2">
+        <span @click.once="showInfo3">点我</span>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#root',
+            methods: {
+                showInfo() {
+                    alert('阻止页面跳转');
+                }
+            },
+        })
+        new Vue({
+            el: '#r1',
+            methods: {
+                showInfo1() {
+                    console.log('阻止事件冒泡');
+                }
+            },
+        })
+        new Vue({
+            el: '#r2',
+            methods: {
+                showInfo3() {
+                    console.log('事件只触发一次');
+                }
+            },
+        })
+    </script>
+
+</body>
+
+</html>

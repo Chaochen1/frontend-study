@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- 双向绑定v-model 变量影响页面 页面影响表格 -->
+        年龄1<input type="text" v-bind:value="age"> <br/> 年龄2
+        <input type="text" v-model:value="age"><br/>
+        <!-- v-model只能用于表单类元素 input textarea等有value的元素 -->
+        <!-- 简写 -->
+        年龄3<input type="text" :value="age"> <br/> 年龄4
+        <input type="text" v-model="age">
+    </div>
+
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                age: 18
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- <button v-on:click="showInfo">点击</button> -->
+        <!-- 简写 -->
+        <button @click="showInfo">点击1</button>
+        <button @click="showInfo2">点击2</button>
+        <!-- 传参 -->
+        <button @click="showInfo3($event, 666)">点击3</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                name: '尚硅谷'
+            },
+            methods: {
+                showInfo() {
+                    alert('你好')
+                },
+                showInfo2(event) {
+                    // 此处的this是vue实例
+                    console.log(this);
+                    console.log(event.target.innerText);
+                },
+                showInfo3(event, number) {
+                    console.log(number);
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

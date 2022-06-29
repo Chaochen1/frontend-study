@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../day01/vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        x: <span>{{number.x}}</span><br> y: <span>{{number.y}}<br>
+        <button @click="number.x++">点我a加1</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                number: {
+                    x: 100,
+                    y: 200
+                }
+            },
+            watch: {
+                "number.x": {
+                    handler(newValue, oldValue) {
+                        console.log('x值发生改变了');
+                    }
+                },
+                // 不加deep监视不到x和y,加上deep能监视到
+                number: {
+                    deep: true,
+                    handler(newValue, oldValue) {
+                        console.log('number值发生改变了');
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

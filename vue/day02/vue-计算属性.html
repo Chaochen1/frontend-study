@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../day01/vue/vue.js"></script>
+</head>
+
+<body>
+    <!-- 计算属性:
+        1.定义:要用的属性不存在，要通过已有属性计算得米。
+        2.原理:底层借助了objcet.defineproperty方法提供的getter利lsetter.
+        3.get的数什么时候执行?
+            (1).初次读取时会执行一次。
+            (2).当依赖的数据发生改变时会被再次调用。
+        4.优势:与methods实现相比，内部有缓存机制（复用），效率更高，调试方便。
+        5.备注:
+            1.计算属性最终会出现在vm上，直接读取使用即可。
+            2.如果计算属性要被修改，那必须写set函数去响应修改，且set中要引起计算时依赖的数据发生改变 
+    -->
+
+
+
+    <div id="root">
+        姓：<input type="text" v-model="firstName" value="xx"><br> 名：
+        <input type="text" v-model="lastName" value="sds"><br> 全称：
+        <span>{{name}}</span>
+    </div>
+    <script>
+        var vm = new Vue({
+                el: '#root',
+                data: {
+                    firstName: 'ds',
+                    lastName: 'sds'
+                },
+                computed: {
+                    // name: {
+                    //     get() {
+                    //         return this.firstName + '-' + this.lastName;
+                    //     },
+                    //     // 如果要设置计算属性的值必须要加上set方法
+                    //     // set方法只针对firstName和lastName两个属性，若data中新加属性，对新加属性修改，不会调用set方法
+                    //     set(value) {
+                    //         const arr = value.split('-')
+                    //         this.firstnName = arr[0]
+                    //         this.lastName = arr[1]
+                    //     }
+
+                    // }
+                    // 若只需要get方法，可以进行简写
+                    name() {
+                        return this.firstName + '-' + this.lastName;
+                    }
+                }
+            })
+            // 计算属性也在vm实例中
+        console.log(vm);
+    </script>
+</body>
+
+</html>
