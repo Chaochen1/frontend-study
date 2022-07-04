@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../day01/vue/vue.js"></script>
+    <script type="text/javascript" src="../day01/vue/dayjs.min.js"></script>
+</head>
+
+<body>
+    <!-- 
+			过滤器：
+				定义：对要显示的数据进行特定格式化后再显示（适用于一些简单逻辑的处理）。
+				语法：
+						1.注册过滤器：Vue.filter(name,callback) 或 new Vue{filters:{}}
+						2.使用过滤器：{{ xxx | 过滤器名}}  或  v-bind:属性 = "xxx | 过滤器名"
+				备注：
+						1.过滤器也可以接收额外参数、多个过滤器也可以串联
+						2.并没有改变原本的数据, 是产生新的对应的数据
+		-->
+    <!-- v-model使用过滤器 v-bind可以使用 -->
+    <div id="root">
+        <h1>显示格式化后的时间</h1>
+        <!-- 计算属性实现 -->
+        <h2>现在是：{{fmtTime}}</h2>
+        <!-- methods实现 -->
+        <h2>现在是：{{getFmtTime()}}</h2>
+        <!-- 过滤器实现 -->
+        <!-- 管道操作符 time作为timeFormatter的输入值 -->
+        <h2>现在是：{{time | timeFormatter}}</h2>
+        <!-- 指定格式 -->
+        <h2>现在是：{{time | timeFormatter('YYYY-MM-DD')}}</h2>
+        <!-- 全局过滤器 -->
+        <h2>现在是：{{time | timeFormatter('YYYY-MM-DD') | mySlice}}</h2>
+    </div>
+    <script>
+        //全局过滤器 必须写在开头
+        Vue.filter('mySlice', function(value) {
+            return value.slice(0, 4)
+        })
+        new Vue({
+            el: '#root',
+            data: {
+                time: 1621561377603
+            },
+            computed: {
+                fmtTime() {
+                    return dayjs(this.time).format('YYYY年MM月DD日 HH:mm:ss')
+                }
+            },
+            methods: {
+                getFmtTime() {
+                    return dayjs(this.time).format('YYYY年MM月DD日 HH:mm:ss')
+                }
+            },
+            // 局部过滤器
+            filters: {
+                timeFormatter(value) {
+                    return dayjs(value).format('YYYY年MM月DD日 HH:mm:ss')
+                },
+                timeFormatter(value, str = 'YYYY年MM月DD日 HH:mm:ss') {
+                    return dayjs(value).format(str)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
