@@ -7,15 +7,19 @@
 
 
 <script>
-
     export default {
     name: "SchoolInfo",
-    props:['schoolName', 'schoolAddr'],
+    data() {
+        return {
+            schoolName: "hehai",
+            schoolAddr: "nanjing"
+        };
+    }
 }
 </script>
 
 
-<style scoped>
+<style>
 
     .demo{
         background-color: skyblue;

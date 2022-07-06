@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
-
+import plugins from './plugin'
 
 Vue.config.productionTip = false
-
+Vue.use(plugins, 1, 2, 3)
 
 /* 
 	关于不同版本的Vue：
