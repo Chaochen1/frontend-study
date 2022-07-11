@@ -10,8 +10,6 @@ import MessageDetail from '../pages/MessageDetail'
 
 // 创建并暴露一个路由器
 const router = new VueRouter({
-    // 修改路由模式为history
-    mode: 'history',
     routes: [{
             path: '/about',
             component: AboutT,

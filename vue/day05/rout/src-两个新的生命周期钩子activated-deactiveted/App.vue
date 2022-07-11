@@ -1,9 +1,6 @@
 <template>
   <div>
     <div class="row">
-      <BannerR/>
-    </div>
-    <div class="row">
       <div class="col-xs-offset-2 col-xs-8">
         <div class="page-header"><h2>Vue Router Demo</h2></div>
       </div>
@@ -35,25 +32,16 @@
   </div>
 </template>
 
-<!-- hash模式url里面永远带着#号，开发当中默认使用这个模式。如果用户考虑url的规范那么就需要使用history模式，因为history模式没有#号，
-是个正常的url，适合推广宣传；
-功能上：比如我们在开发app的时候有分享页面，那么这个分享出去的页面就是用vue或是react做的，
-咱们把这个页面分享到第三方的app里，有的app里面url是不允许带有#号的，所以要将#号去除那么就要使用history模式，
-但是使用history模式还有一个问题就是，在访问二级页面的时候，做刷新操作，会出现404错误，那么就需要和后端人配合，让他配置一下apache
-或是nginx的url重定向，重定向到你的首页路由上就ok了 -->
 
-<!-- 1.是否向后端传参：
- hash模式#号后面的参数不会当作参数传给后端，history会
+<!-- 在路由的基本使用中我们介绍过：切换时，隐藏组件实质是销毁组件，显示组件实质是挂载组件。
+缓存路由组件，即keep-alive。
+用<keep-alive>标签将<router-view>包裹，隐藏组件时不会将组件销毁，组件依然挂载着。
+<keep-ailve>标签上的属性include指定缓存哪个组件，其值是组件名。 -->
 
-2.是否刷新页面
- hash模式不会刷新页面，history会刷新页面 -->
-
- <!-- 在路由器配置中修改路由mode为history即可 -->
 
 <script>
-import BannerR from './components/BannerR.vue'
+
 export default {
-  name: 'App',
-  components:{BannerR}
+  name: 'App'
 }
 </script>

@@ -3,7 +3,8 @@
 		<ul>
 			<li v-for="m in messageList" :key="m.id">
 
-			<router-link class="list-group-item" :to="{
+			<!-- 加上replace之后按回退按钮，不会再回退到当前message页面 -->
+			<router-link replace class="list-group-item" :to="{
 				name:'xiangqing',
 				query:{
 					id:m.id,
